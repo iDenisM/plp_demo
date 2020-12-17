@@ -1,7 +1,12 @@
 import './Footer.css'
+import Newsletter from '../newsletter/Newsletter'
+import Social from '../social/Social'
 
 const Footer = () => (
-  <footer>This is the footer</footer>
+  <footer>
+    <Newsletter />
+    <Social />
+  </footer>
 )
 
 export default Footer;
