@@ -5,11 +5,13 @@ import ProductList from '../productList/ProductList';
 import Footer from '../footer/Footer';
 
 const App = () => {
+  const categoryName = 'products';
+
   return (
     <div className="App">
       <Header />
       <main>
-        <ProductList />
+        <ProductList categoryName={categoryName}/>
       </main>
       <Footer />
     </div>
