@@ -14,10 +14,14 @@ export default class Slider extends React.Component<SliderProps, {}> {
   render() {
     return (
       <div>
-        <button>
-          <span className="text">Previous slide</span>
-          <span className="icon"></span>
-        </button>
+        {
+          this.props.products.length > 3 && (
+            <button>
+              <span className="text">Previous slide</span>
+              <span className="icon"></span>
+            </button>
+          )
+        }
         <div className="wrapper">
           {
             this.props.products.map(product => (
@@ -27,10 +31,14 @@ export default class Slider extends React.Component<SliderProps, {}> {
             ))
           }
         </div>
-        <button>
-          <span className="text">Next slide</span>
-          <span className="icon"></span>
-        </button>
+        {
+          this.props.products.length > 3 && (
+            <button>
+              <span className="text">Next slide</span>
+              <span className="icon"></span>
+            </button>
+          )
+        }
       </div>
     )
   }

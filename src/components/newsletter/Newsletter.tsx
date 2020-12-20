@@ -1,11 +1,14 @@
 import './Newsletter.css'
 
 const Newsletter = () => (
-  <form>
+  <form className="newsletter">
     <fieldset>
-      <legend>Subscribe to our newsletter</legend>
-      <input type="email" name="email"/>
-      <button type="submit">Sign up</button>
+      <legend className="is-vHidden">newsletter</legend>
+      <div className="newsletter__info">Subscribe to our newsletter</div>
+      <div className="newsletter__form">
+        <input className="newsletter__email" type="email" name="email"/>
+        <button className="newsletter__submit" type="submit">Sign up</button>
+      </div>
     </fieldset>
   </form>
 )
