@@ -1,21 +1,7 @@
 import './ProductList.css'
 import React from 'react';
 import Product from '../product/Product';
-
-type ProductType = {
-  UPC: string,
-  name: string,
-  price: {
-    current: {
-      value: string
-    },
-    currency: string
-  },
-  availability: {
-    stock: Int16Array
-  },
-  variants: ProductType[]
-}
+import { ProductType } from '../../defaults/types';
 
 type ProductListProps = {
   categoryName: string
@@ -55,7 +41,7 @@ export default class ProductList extends React.Component<ProductListProps, Produ
       <div>
             {
               products.map(p => (
-                <Product key={p.UPC} />
+                <Product {...p} key={p.UPC} />
               ))
             }
           </div>
