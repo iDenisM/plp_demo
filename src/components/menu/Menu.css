@@ -1,0 +1,7 @@
+.menu__list {
+  list-style: none;
+}
+
+.menu__item {
+  font-weight: --font-bold;
+}

@@ -3,7 +3,7 @@ import Newsletter from '../newsletter/Newsletter'
 import Social from '../social/Social'
 
 const Footer = () => (
-  <footer>
+  <footer className="footer">
     <Newsletter />
     <Social />
   </footer>

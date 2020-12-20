@@ -1,10 +1,18 @@
 import './Menu.css'
 
 const Menu = () => (
-  <nav>
-    <a href="/">Sunglasses</a>
-    <a href="/">Eyeglasses</a>
-    <a href="/">Lenses</a>
+  <nav className="menu">
+    <ul className="menu__list">
+      <li className="menu__item">
+        <a href="/">Sunglasses</a>
+      </li>
+      <li className="menu__item">
+        <a href="/">Eyeglasses</a>
+      </li>
+      <li className="menu__item">
+        <a href="/">Lenses</a>
+      </li>
+    </ul>
   </nav>
 )
 

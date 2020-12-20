@@ -1,0 +1,39 @@
+:root {
+  --base-border: 16px;
+  --col-q: 1;
+  --font-bold: 700;
+}
+
+@media only screen and (min-width: 650px) {
+  :root {
+    --col-q: 2;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  :root {
+    --col-q: 2;
+  }
+}
+
+@media only screen and (min-width: 965px) {
+  :root {
+    --col-q: 3;
+  }
+}
+
+@media only screen and (min-width: 1275px) {
+  :root {
+    --col-q: 4;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  :root {
+    --col-q: 5;
+  }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
