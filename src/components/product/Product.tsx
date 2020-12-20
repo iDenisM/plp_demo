@@ -15,14 +15,13 @@ const Product = (props: ProductType) => (
               <span className="product__soldout">Sold Out</span>
             )
           }
-          
         </div>
       )
     }
     <div className="product__name">{props.name ? props.name : ''}</div>
     {
       props.variants.length > 0 && (
-        <Slider images={['https://via.placeholder.com/80x50', 'https://via.placeholder.com/80x50', 'https://via.placeholder.com/80x50']} />
+        <Slider products={props.variants} />
       )
     }
   </div>

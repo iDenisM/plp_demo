@@ -1,0 +1,40 @@
+:root {
+  --col-q: 1;
+}
+
+@media only screen and (min-width: 650px) {
+  :root {
+    --col-q: 2;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  :root {
+    --col-q: 2;
+  }
+}
+
+@media only screen and (min-width: 965px) {
+  :root {
+    --col-q: 3;
+  }
+}
+
+@media only screen and (min-width: 1275px) {
+  :root {
+    --col-q: 4;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  :root {
+    --col-q: 5;
+  }
+}
+
+.products {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(var(--col-q), 1fr);
+  gap: 12px 8px;
+}

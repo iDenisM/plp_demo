@@ -1,8 +1,9 @@
 import './Slider.css'
 import React from 'react';
+import { ProductType } from '../../defaults/types';
 
 type SliderProps = {
-  images: string[]
+  products: ProductType[]
 }
 
 export default class Slider extends React.Component<SliderProps, {}> {
@@ -19,9 +20,9 @@ export default class Slider extends React.Component<SliderProps, {}> {
         </button>
         <div className="wrapper">
           {
-            this.props.images.map(img => (
+            this.props.products.map(product => (
               <div className="slide">
-                <img src={img} alt="product variant"/>
+                <img src="https://via.placeholder.com/80x50" alt={`representation of the ${product.name} product`}/>
               </div>
             ))
           }

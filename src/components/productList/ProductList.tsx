@@ -38,7 +38,7 @@ export default class ProductList extends React.Component<ProductListProps, Produ
   render() {
     const products = this.state.products;
     const tempate = products.length > 0 ? (
-      <div>
+      <div className="products">
             {
               products.map(p => (
                 <Product {...p} key={p.UPC} />
