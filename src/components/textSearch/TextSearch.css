@@ -1,7 +1,17 @@
+.search fieldset {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 .search__input,
 .search__submit {
   height: var(--form-input-height);
   text-transform: lowercase;
+}
+
+.search__input {
+  padding-left: 20px;
 }
 
 .search__submit {
@@ -11,7 +21,7 @@
   color: #fff;
   margin-left: 10px;
   text-align: center;
-  padding: 0 10px;
+  padding: 0 12px;
   border: 1px solid #000;
   border-radius: 3px;
 }

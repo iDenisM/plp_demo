@@ -42,6 +42,18 @@ button {
   font-family: 'Roboto', sans-serif;
 }
 
+input,
+button {
+  padding: 0;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+button,
+input[type="button"] {
+  font-size: 10px;
+}
+
 ul,
 body,
 fieldset {
