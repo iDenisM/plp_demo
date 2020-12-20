@@ -1,7 +1,8 @@
 :root {
-  --base-border: 16px;
+  --base-body-border: 16px;
   --col-q: 1;
   --font-bold: 700;
+  --form-input-height: 30px;
 }
 
 @media only screen and (min-width: 650px) {
@@ -34,6 +35,32 @@
   }
 }
 
-body {
+body,
+input,
+button {
+  box-sizing: content-box;
   font-family: 'Roboto', sans-serif;
+}
+
+ul,
+body,
+fieldset {
+  padding: 0;
+  margin: 0;
+}
+
+.is-vHidden {
+  display: block;
+  position: absolute !important;
+  clip: rect(1px,1px,1px,1px);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+fieldset {
+  border: 0;
 }

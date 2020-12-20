@@ -21,7 +21,7 @@ export default class Slider extends React.Component<SliderProps, {}> {
         <div className="wrapper">
           {
             this.props.products.map(product => (
-              <div className="slide">
+              <div key={product.UPC} className="slide">
                 <img src="https://via.placeholder.com/80x50" alt={`representation of the ${product.name} product`}/>
               </div>
             ))

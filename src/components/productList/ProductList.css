@@ -1,5 +1,5 @@
 .products {
-  padding: var(--base-border);
+  padding: var(--base-body-border);
   display: grid;
   grid-template-columns: repeat(var(--col-q), 1fr);
   gap: 12px 8px;

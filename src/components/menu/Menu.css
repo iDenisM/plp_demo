@@ -1,7 +1,35 @@
 .menu__list {
   list-style: none;
+  height: 100%;
 }
 
 .menu__item {
-  font-weight: --font-bold;
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  margin: 0 17px;
+  display: inline-flex;
+  height: 100%;
+  align-items: center;
+  position: relative;
+}
+.menu__item--selected::after,
+.menu__item:hover::after {
+  content: '';
+}
+
+.menu__item:hover::after {
+  background-color: #00000080;
+}
+
+.menu__item::after {
+  position: absolute;
+  bottom: 0;
+  height: 5px;
+  width: 100%;
+  background-color: #000;
+}
+
+.menu__item a {
+  color: #000;
+  text-decoration: none;
 }

@@ -18,13 +18,15 @@ export default class ProductList extends React.Component<ProductListProps, Produ
     this.state = {
       products: []
     };
-
-    this._getProductListData();
   }
-
+  
   /**
    * @description get the product list based on the category name
    */
+  componentDidMount() {
+    this._getProductListData();
+  }
+
   async _getProductListData() {
     try {
       const response = await fetch(`https://assets.fc-dev.instore.oakley.com/assets/products/${this.props.categoryName}.json`);

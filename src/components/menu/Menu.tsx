@@ -3,7 +3,7 @@ import './Menu.css'
 const Menu = () => (
   <nav className="menu">
     <ul className="menu__list">
-      <li className="menu__item">
+      <li className="menu__item menu__item--selected">
         <a href="/">Sunglasses</a>
       </li>
       <li className="menu__item">

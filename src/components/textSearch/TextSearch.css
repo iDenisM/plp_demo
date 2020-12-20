@@ -1,0 +1,17 @@
+.search__input,
+.search__submit {
+  height: var(--form-input-height);
+  text-transform: lowercase;
+}
+
+.search__submit {
+  text-transform: uppercase;
+  font-weight: var(--font-bold);
+  background-color: #000;
+  color: #fff;
+  margin-left: 10px;
+  text-align: center;
+  padding: 0 10px;
+  border: 1px solid #000;
+  border-radius: 3px;
+}

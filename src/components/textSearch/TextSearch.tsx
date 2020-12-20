@@ -1,11 +1,11 @@
 import './TextSearch.css'
 
 const TextSearch = () => (
-  <form>
+  <form className="search">
     <fieldset>
-      <legend>Text search</legend>
-      <input type="text" placeholder="search" />
-      <input type="button" value="Reset"/>
+      <legend className="is-vHidden">Text search</legend>
+      <input className="search__input" type="text" placeholder="search" />
+      <input className="search__submit" type="button" value="Reset"/>
     </fieldset>
   </form>
 )
