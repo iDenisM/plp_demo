@@ -1,56 +1,51 @@
 import './ProductList.css'
-import React from 'react';
+import { useState, useEffect } from 'react';
 import Product from '../product/Product';
-import { ProductType } from '../../defaults/types';
+import { ProductType, RootState } from '../../defaults/types';
+import { useSelector } from 'react-redux';
 
 type ProductListProps = {
   categoryName: string
 }
 
-type ProductListState = {
-  products: ProductType[]
-}
+const ProductList = (props: ProductListProps) => {
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [products, setProducts] = useState<ProductType[]>([])
 
-export default class ProductList extends React.Component<ProductListProps, ProductListState> {
-  constructor(props: ProductListProps) {
-    super(props);
-
-    this.state = {
-      products: []
-    };
-  }
-  
-  /**
-   * @description get the product list based on the category name
-   */
-  componentDidMount() {
-    this._getProductListData();
-  }
-
-  async _getProductListData() {
-    try {
-      const response = await fetch(`https://assets.fc-dev.instore.oakley.com/assets/products/${this.props.categoryName}.json`);
-      const products = await response.json();
-      this.setState({products});
-    } catch (error) {
-      console.error('There has been an error while getting the products', error);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`https://assets.fc-dev.instore.oakley.com/assets/products/${props.categoryName}.json`);
+        const products = await response.json();
+        setIsLoaded(true);
+        setProducts(products);
+      } catch (error) {
+        setIsLoaded(true);
+        setError(error);
+      }
     }
-  }
 
-  render() {
-    const products = this.state.products;
-    const tempate = products.length > 0 ? (
+    fetchData();
+  })
+
+  if (error) {
+    return <div>An error has occured</div>
+  } else if (!isLoaded) {
+    return <div>Loading...</div>
+  } else if (!products.length) {
+    return <div>No products were found</div>
+  } else {
+    return (
       <div className="products">
-            {
-              products.map(p => (
-                <Product {...p} key={p.UPC} />
-              ))
-            }
-          </div>
-    ): (
-      <div>Loading...</div>
+        {
+          products.map(p => (
+            <Product {...p} key={p.UPC} />
+          ))
+        }
+      </div>
     )
-
-    return ( tempate );
   }
 }
+
+export default ProductList;

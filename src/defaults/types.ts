@@ -1,4 +1,4 @@
-export type ProductType = {
+export interface ProductType {
   UPC: string,
   name: string,
   price: {
@@ -11,4 +11,15 @@ export type ProductType = {
     stock: number
   },
   variants: ProductType[]
+}
+
+const SEARCH_MESSAGE = 'SEARCHING'
+
+export interface SearchAction {
+  type: typeof SEARCH_MESSAGE,
+  payload: string
+}
+
+export interface RootState {
+  search: string
 }

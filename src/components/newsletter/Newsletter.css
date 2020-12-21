@@ -1,3 +1,8 @@
 .newsletter {
   color: #fff;
+  padding-top: var(--base-body-border);
+}
+
+.newsletter__info {
+  letter-spacing: -0.1px;
 }
