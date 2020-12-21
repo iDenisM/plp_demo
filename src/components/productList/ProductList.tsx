@@ -8,10 +8,15 @@ type ProductListProps = {
   categoryName: string
 }
 
+
+
 const ProductList = (props: ProductListProps) => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [products, setProducts] = useState<ProductType[]>([])
+  const [products, setProducts] = useState<ProductType[]>([]);
+  const selectSearchProduct = (state: RootState) => state.textSearch;
+  const textSearch = useSelector(selectSearchProduct);
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,7 +32,7 @@ const ProductList = (props: ProductListProps) => {
     }
 
     fetchData();
-  })
+  }, []);
 
   if (error) {
     return <div>An error has occured</div>
@@ -36,10 +41,16 @@ const ProductList = (props: ProductListProps) => {
   } else if (!products.length) {
     return <div>No products were found</div>
   } else {
+    const filterMap = {
+      All: () => true,
+      Filtered: (product: ProductType) => product.name.toLocaleLowerCase().includes(textSearch)
+    }
+    const task = textSearch ? 'Filtered' : 'All';
+
     return (
       <div className="products">
         {
-          products.map(p => (
+          products.filter(filterMap[task]).map(p => (
             <Product {...p} key={p.UPC} />
           ))
         }

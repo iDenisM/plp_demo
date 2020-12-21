@@ -21,5 +21,5 @@ export interface SearchAction {
 }
 
 export interface RootState {
-  search: string
+  textSearch: string
 }

@@ -14,7 +14,6 @@ const search = (newSearch: string): SearchAction => {
 
 const App = () => {
   const categoryName = 'products';
-
   return (
     <div className="App">
       <Header />
