@@ -1,3 +1,7 @@
+.search {
+  display: var(--is-menu-visible);
+}
+
 .search fieldset {
   display: flex;
   align-items: center;

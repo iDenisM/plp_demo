@@ -1,3 +1,7 @@
+.menu {
+  display: var(--is-menu-visible);
+}
+
 .menu__list {
   list-style: none;
   height: 100%;
