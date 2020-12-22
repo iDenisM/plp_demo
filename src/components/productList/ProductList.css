@@ -3,3 +3,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.products__error,
+.products__loading {
+  text-align: center;
+  margin-top: 50px;
+}

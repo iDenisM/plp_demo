@@ -4,24 +4,17 @@ import Product from '../product/Product';
 import { ProductType, RootState } from '../../defaults/types';
 import { useSelector } from 'react-redux';
 
-type ProductListProps = {
-  categoryName: string
-}
-
-
-
-const ProductList = (props: ProductListProps) => {
+const ProductList = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [products, setProducts] = useState<ProductType[]>([]);
   const selectSearchProduct = (state: RootState) => state.textSearch;
   const textSearch = useSelector(selectSearchProduct);
   
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://assets.fc-dev.instore.oakley.com/assets/products/${props.categoryName}.json`);
+        const response = await fetch(`https://assets.fc-dev.instore.oakley.com/assets/products/products.json`);
         const products = await response.json();
         setIsLoaded(true);
         setProducts(products);
@@ -35,9 +28,9 @@ const ProductList = (props: ProductListProps) => {
   }, []);
 
   if (error) {
-    return <div>An error has occured</div>
+    return <div className="products__error">An error has occured</div>
   } else if (!isLoaded) {
-    return <div>Loading...</div>
+    return <div className="products__loading">Loading...</div>
   } else if (!products.length) {
     return <div>No products were found</div>
   } else {

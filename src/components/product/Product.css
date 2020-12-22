@@ -3,6 +3,8 @@
   padding: 0 4px;
   box-sizing: border-box;
   margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
 .product__preview {

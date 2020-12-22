@@ -18,7 +18,7 @@ const App = () => {
     <div className="App">
       <Header />
       <main>
-        <ProductList categoryName={categoryName}/>
+        <ProductList />
       </main>
       <Footer />
     </div>

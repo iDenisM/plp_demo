@@ -23,7 +23,7 @@ const Product = (props: ProductType) => (
     <div className="product__name">{props.name ? props.name : ''}</div>
     {
       props.variants.length > 0 && (
-        <Slider products={props.variants} />
+        <Slider products={props.variants} slidesPerView={3}/>
       )
     }
   </div>

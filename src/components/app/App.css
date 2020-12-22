@@ -75,3 +75,13 @@ fieldset {
 fieldset {
   border: 0;
 }
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
