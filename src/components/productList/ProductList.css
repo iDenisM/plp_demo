@@ -1,6 +1,5 @@
 .products {
-  padding: var(--base-body-border);
-  display: grid;
-  grid-template-columns: repeat(var(--col-q), 1fr);
-  gap: 12px 8px;
+  padding: var(--base-body-border) 12px 0;
+  display: flex;
+  flex-wrap: wrap;
 }

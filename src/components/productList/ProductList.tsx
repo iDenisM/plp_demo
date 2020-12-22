@@ -50,8 +50,8 @@ const ProductList = (props: ProductListProps) => {
     return (
       <div className="products">
         {
-          products.filter(filterMap[task]).map(p => (
-            <Product {...p} key={p.UPC} />
+          products.filter(filterMap[task]).map(product => (
+            <Product {...product} key={product.UPC} />
           ))
         }
       </div>

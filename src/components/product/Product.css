@@ -1,4 +1,29 @@
+.product {
+  width: var(--plp-column);
+  padding: 0 4px;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+}
+
+.product__preview {
+  position: relative;
+  padding-top: 100%;
+}
+
 .product__img {
   width: 100%;
   height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.product__price,
+.product__name {
+  text-align: center;
+  font-weight: var(--font-bold);
+}
+
+.product__price {
+  margin-top: 9px;
 }

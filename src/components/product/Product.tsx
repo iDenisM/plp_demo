@@ -4,7 +4,9 @@ import { ProductType } from '../../defaults/types';
 
 const Product = (props: ProductType) => (
   <div className="product">
-    <img className="product__img" src="https://via.placeholder.com/600" alt={`representation of the ${props.name} product`} />
+    <div className="product__preview">
+      <img className="product__img" src="https://via.placeholder.com/600" alt={`representation of the ${props.name} product`} />
+    </div>
     {
       props.price.current?.value !== undefined && (
         <div className="product__price">
